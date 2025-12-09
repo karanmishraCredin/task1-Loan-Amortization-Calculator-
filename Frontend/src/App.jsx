@@ -11,6 +11,5 @@ export default function App() {
         <Tables />
       </div>
     </MainProvider>
-
   );
 }
