@@ -5,7 +5,7 @@ export default function Info() {
     return (
         <>
             <Box component="section" sx={{ p: 2, border: '1px  grey', color:'black' }}>
-                {"Principal " + state.principal + " Yearly Rate " + state.yearlyRate + " Monthly Payment " + state.monthlyPayment}
+                {"Principal " + state?.principal + " Yearly Rate " + state?.yearlyRate + " Monthly Payment " + state?.monthlyPayment}
             </Box>
         </>
     )

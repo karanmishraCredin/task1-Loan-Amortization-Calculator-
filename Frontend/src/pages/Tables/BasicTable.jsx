@@ -18,8 +18,7 @@ export default function BasicTable() {
     return (
         <>
             {
-                state?.schedule.length > 0 ?
-
+                state?.schedule?.length > 0 ?
                     <TableContainer sx={{ overflow: 'scroll', height: '90vh' }} component={Paper}>
                         <Table sx={{ minWidth: 650, overflow: 'scroll' }} aria-label="simple table">
                             <TableHead>
