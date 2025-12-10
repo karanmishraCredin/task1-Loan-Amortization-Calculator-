@@ -6,15 +6,11 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { useMain } from '../../context/MainProvider';
-import { useEffect } from 'react';
 
 
 
 export default function BasicTable() {
     const { state, setState } = useMain()
-    useEffect(() => {
-        console.log("state in table-> ", state)
-    }, [state])
     return (
         <>
             {
@@ -44,7 +40,7 @@ export default function BasicTable() {
                             </TableBody>
                         </Table>
                     </TableContainer>
-                    : <h1 style={{color:'black'}} >No Data Found !</h1>}
+                    : <h1 style={{ color: 'black' }} >No Data Found !</h1>}
         </>
 
     );

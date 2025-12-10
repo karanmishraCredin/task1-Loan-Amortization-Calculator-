@@ -7,9 +7,9 @@ export default function useinputshook(params) {
         interest_rate: 0,
         loan_time: 0
     });
-    const [info ,setinfo]=useState()
+    const [info, setinfo] = useState()
     const [error, seterror] = useState(false)
-    const {state,setState } =useMain()
+    const { state, setState } = useMain()
     const handleChange = (e) => {
         setValues({ ...values, [e.target.name]: e.target.value });
     };
@@ -17,15 +17,14 @@ export default function useinputshook(params) {
         e.preventDefault();
         if (!values.interest_rate || !values.loan_amount || !values.loan_time) {
             console.log("Error: values cannot be zero.");
-            setState({...values,error:true})
-
+            setState({ ...values, principal: 0, yearlyRate: 0, years: 0, monthlyPayment: 0, error: true })
             seterror(true)
             return;
         }
-        if (values.interest_rate<0 || values.loan_amount<0 || values.loan_time<0) {
+        if (values.interest_rate < 0 || values.loan_amount < 0 || values.loan_time < 0) {
             console.log("Error: values cannot be negative");
             seterror(true)
-            setState({...values,error:true})
+            setState({ ...values, principal: 0, yearlyRate: 0, years: 0, monthlyPayment: 0, error: true })
             return;
         }
         console.log("Form submitted:", values);
@@ -33,7 +32,7 @@ export default function useinputshook(params) {
         console.log(res)
         setinfo(res?.data)
         setState(res?.data)
-        
+
     };
-    return { values, setValues, handleChange, handleSubmit, error, seterror,info };
+    return { values, setValues, handleChange, handleSubmit, error, seterror, info };
 }
